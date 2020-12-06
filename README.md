@@ -2,9 +2,9 @@
 
 ## How to read Serial Data from micro:bit on your Mac OS
 
-### 1. Print to the console data that you want to read via serial connection
+### 1. Add the following JavaScript code to your makecode project
 
-Sample code below prints accelerometer data from both x and y axis continuously, feel free to modify as per your needs.
+Sample JavaScript code below prints accelerometer data from both x and y axis continuously, feel free to modify as per your needs.
 
 ```
 basic.forever(function () {
