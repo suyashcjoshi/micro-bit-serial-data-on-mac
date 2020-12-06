@@ -2,7 +2,9 @@
 
 ## How to read Serial Data from micro:bit on your Mac OS
 
-### 1. Write this code in JavaScript tab. Currently it's printing accelerometer data from both x and y axis continuously, feel free to modify as per your needs.
+### 1. Write this code in JavaScript tab. 
+
+Currently it's printing accelerometer data from both x and y axis continuously, feel free to modify as per your needs.
 
 ```
 basic.forever(function () {
@@ -11,7 +13,7 @@ basic.forever(function () {
 })
 ```
 
-### 2. Open the terminal app and connect to the micro:bit devie using screen
+### 2. Open the terminal app and connect to the micro:bit devcie using screen utility
 
 - Plug in the micro:bit and open a new terminal window. 
 - Type ls `/dev/cu.*` to get a list of connected serial devices; one of them will look like `/dev/cu.usbmodem1422` (the exact number depends on your computer).
