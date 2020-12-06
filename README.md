@@ -1,31 +1,23 @@
 
-> Open this page at [https://suyashjoshi.github.io/serial_data_acceleration/](https://suyashjoshi.github.io/serial_data_acceleration/)
 
-## Use as Extension
+## How to read Serial Data from micro:bit on your Mac OS
 
-This repository can be added as an **extension** in MakeCode.
+### 1. Write this code in JavaScript tab. Currently it's printing accelerometer data from both x and y axis continuously, feel free to modify as per your needs.
 
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/suyashjoshi/serial_data_acceleration** and import
+```
+basic.forever(function () {
+    serial.writeLine("" + (input.acceleration(Dimension.X)))
+    serial.writeLine("" + (input.acceleration(Dimension.Y)))
+})
+```
 
-## Edit this project ![Build status badge](https://github.com/suyashjoshi/serial_data_acceleration/workflows/MakeCode/badge.svg)
+### 2. Open the terminal app and connect to the micro:bit devie using screen
 
-To edit this repository in MakeCode.
+- Plug in the micro:bit and open a new terminal window. 
+- Type ls `/dev/cu.*` to get a list of connected serial devices; one of them will look like `/dev/cu.usbmodem1422` (the exact number depends on your computer).
+- Type screen `/dev/cu.usbmodem1422 115200`, replacing the 'usbmodem' number with the number you found in the previous step. 115200 bits/sec is the baud rate at which it will show data. This will open the micro:bit's serial output and show all messages received from the device. 
+- To exit, press Ctrl-A then Ctrl-D.
 
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/suyashjoshi/serial_data_acceleration** and click import
+**Reference for more information**
 
-## Blocks preview
-
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
-
-![A rendered view of the blocks](https://github.com/suyashjoshi/serial_data_acceleration/raw/master/.github/makecode/blocks.png)
-
-#### Metadata (used for search, rendering)
-
-* for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+micro:bit help guide: https://support.microbit.org/support/solutions/articles/19000022103-outputing-serial-data-from-the-micro-bit-to-a-computer
